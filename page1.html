@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #e6d9f2; /* lavender */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Georgia", serif;
+    }
+
+    .card {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #3d145c; /* dark purple */
+    }
+
+    p {
+      color: #4b1f6f;
+      font-size: 18px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      border-radius: 10px;
+      border: 1px solid #aaa;
+      margin-top: 15px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      background-color: #5e2b97;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4a2278;
+    }
+
+    .error {
+      color: #7a1f1f;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Since I couldn't be there, I made a little Treasure Hunt for you, hehe</h1>
+
+    <p>
+      First clue.<br>
+      The date of our <b>first kiss</b> 😉
+    </p>
+
+    <input id="answer" type="text" placeholder="Type your answer here">
+
+    <br>
+    <button onclick="checkAnswer()">Unlock</button>
+
+    <p id="message" class="error"></p>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const userAnswer = document.getElementById("answer").value.trim();
+
+      // CHANGE THIS ANSWER ONLY
+      const correctAnswer = "22/11/2023";
+
+      if (userAnswer === correctAnswer) {
+        window.location.href = "page2.html";
+      } else {
+        document.getElementById("message").innerText =
+          "Hmm… nope 😌 Check our chats again betu.";
+      }
+    }
+  </script>
+</body>
+</html>

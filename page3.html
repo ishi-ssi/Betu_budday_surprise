@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clue Three 💜</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #e6d9f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Georgia", serif;
+    }
+
+    .card {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      max-width: 430px;
+    }
+
+    h1 {
+      color: #3d145c;
+    }
+
+    p {
+      color: #4b1f6f;
+      font-size: 18px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      border-radius: 10px;
+      border: 1px solid #aaa;
+      margin-top: 15px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      background-color: #5e2b97;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4a2278;
+    }
+
+    .error {
+      color: #7a1f1f;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Clue Three 💜</h1>
+
+    <p>
+      Okay last one 😌<br>
+      Who’s <b>your favourite doctor</b>?
+    </p>
+
+    <input id="answer" type="text" placeholder="You know this 😉">
+
+    <br>
+    <button onclick="checkAnswer()">Unlock</button>
+
+    <p id="message" class="error"></p>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const userAnswer = document
+        .getElementById("answer")
+        .value
+        .trim()
+        .toLowerCase();
+
+      const validAnswers = [
+        "dr ishita yaduvanshi",
+        "ishita yaduvanshi",
+        "dr ishita",
+        "betu",
+        "Dr ishita Yaduvanshi aka betu"
+      ];
+
+      if (validAnswers.includes(userAnswer)) {
+        window.location.href = "page4.html";
+      } else {
+        document.getElementById("message").innerText =
+          "Wrong 😌 but I’ll forgive you if you think harder.";
+      }
+    }
+  </script>
+</body>
+</html>

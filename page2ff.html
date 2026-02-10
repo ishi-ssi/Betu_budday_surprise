@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Clue Two 💜</title>
+
+
+
+  <style>
+
+    body {
+
+      margin: 0;
+
+      height: 100vh;
+
+      background-color: #e6d9f2;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      font-family: "Georgia", serif;
+
+    }
+
+
+
+    .card {
+
+      text-align: center;
+
+      background: rgba(255, 255, 255, 0.6);
+
+      padding: 40px;
+
+      border-radius: 20px;
+
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+      max-width: 420px;
+
+    }
+
+
+
+    h1 {
+
+      color: #3d145c;
+
+    }
+
+
+
+    p {
+
+      color: #4b1f6f;
+
+      font-size: 18px;
+
+    }
+
+
+
+    .options {
+
+      text-align: left;
+
+      margin-top: 20px;
+
+      color: #4b1f6f;
+
+      font-size: 16px;
+
+    }
+
+
+
+    .options label {
+
+      display: block;
+
+      margin: 10px 0;
+
+      cursor: pointer;
+
+    }
+
+
+
+    button {
+
+      margin-top: 25px;
+
+      padding: 10px 25px;
+
+      font-size: 16px;
+
+      border: none;
+
+      border-radius: 20px;
+
+      background-color: #5e2b97;
+
+      color: white;
+
+      cursor: pointer;
+
+    }
+
+
+
+    button:hover {
+
+      background-color: #4a2278;
+
+    }
+
+
+
+    .error {
+
+      color: #7a1f1f;
+
+      margin-top: 15px;
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <div class="card">
+
+    <h1>Clue Two 💜</h1>
+
+
+
+    <p>
+
+      Easy one 😌<br>
+
+      Who’s <b>my favourite doctor</b>?
+
+    </p>
+
+
+
+    <div class="options">
+
+      <label>
+
+        <input type="radio" name="doctor" value="9th"> 9th
+
+      </label>
+
+      <label>
+
+        <input type="radio" name="doctor" value="10th"> 10th
+
+      </label>
+
+      <label>
+
+        <input type="radio" name="doctor" value="11th"> 11th
+
+      </label>
+
+      <label>
+
+        <input type="radio" name="doctor" value="12th"> 12th
+
+      </label>
+
+    </div>
+
+
+
+    <button onclick="checkAnswer()">Unlock</button>
+
+
+
+    <p id="message" class="error"></p>
+
+  </div>
+
+
+
+  <script>
+
+    function checkAnswer() {
+
+      const options = document.getElementsByName("doctor");
+
+      let selected = "";
+
+
+
+      for (let i = 0; i < options.length; i++) {
+
+        if (options[i].checked) {
+
+          selected = options[i].value;
+
+        }
+
+      }
+
+
+
+      if (selected === "") {
+
+        document.getElementById("message").innerText =
+
+          "Pick one first 😌";
+
+        return;
+
+      }
+
+
+
+      if (selected === "10th") {
+
+        window.location.href = "page3.html";
+
+      } else {
+
+        document.getElementById("message").innerText =
+
+          "Nope 😏 Try again.";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
